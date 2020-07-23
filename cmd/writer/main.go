@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"os"
 )
@@ -24,11 +25,16 @@ func main()  {
 		reader FooReader
 		writer FooWriter
 	)
-	input := make([]byte, 4096)
-	s, err := reader.Read(input)
-	if err != nil {
-		log.Fatalln("Unable to read data")
+	//input := make([]byte, 4096)
+	//s, err := reader.Read(input)
+	//if err != nil {
+	//	log.Fatalln("Unable to read data")
+	//}
+	//s, err = writer.Write(input)
+	//fmt.Printf("Wrote %d bytes to stdout\n", s)
+
+	// Using Copy function here to achieve the same as above
+	if _, err := io.Copy(&writer, &reader); err != nil {
+		log.Fatalln("Unable to read/write data")
 	}
-	s, err = writer.Write(input)
-	fmt.Printf("Wrote %d bytes to stdout\n", s)
 }
