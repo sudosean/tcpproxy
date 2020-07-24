@@ -1,6 +1,6 @@
 
 # The binary to build (just the basename).
-BIN := tcpproxy
+BIN := echo
 
 # Where to push the docker image.
 REGISTRY ?= grande2017

@@ -1,5 +1,6 @@
 # TCP Proxy project
-
+In this project I am really just working with stdin/stdout in go using IO and bufio. I create a cmd that writes back whatever comes in from stdin (writer). I also create an echo server (echo) and a tcp proxy client that just returns 
+whater comed from the website provided
 
 # Blueprint/Boilerplate Used For This Golang Project
 You can find more information about this project/repository and how to use it in following blog posts:
@@ -13,4 +14,3 @@ You can find more information about this project/repository and how to use it in
 ```bash
 go mod vendor
 ```
-
